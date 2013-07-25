@@ -95,7 +95,7 @@
       });
 
 
-      var uiwebview = /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(navigator.userAgent);
+      var uiwebview = /((iPhone|iPod|iPad).*AppleWebKit(?!.*Safari))|(CriOS)/i.test(navigator.userAgent);
       if(uiwebview) {
         var $video = $('video');
         $video.attr('controls', true);
