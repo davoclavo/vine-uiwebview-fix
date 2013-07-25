@@ -97,6 +97,7 @@
 
       var uiwebview = /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(navigator.userAgent);
       if(uiwebview) {
+        alert('webview')
         var $video = $('video');
         $video.attr('controls', true);
         $video.css({opacity: 0});
@@ -104,12 +105,16 @@
         var poster = new Image();
         poster.src = $video.attr('poster');
         $(poster).css({width: '100%'})
-        var playButton = new Image();
-        playButton.src = 'play-button.png';
+        var playButton = $('<div>')
         $(playButton).css({
           position: 'absolute',
-          top: 'calc(50% - 85px)',
-          left: 'calc(50% - 75px)'
+          top: '0',
+          left: '0',
+          width: '100%',
+          height: '100%',
+          'background-image': 'url(play-button.png)',
+          'background-position': 'center center',
+          'background-repeat': 'no-repeat'
         })
         $video.before(poster).before(playButton);
 
