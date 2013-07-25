@@ -97,30 +97,26 @@
 
       var uiwebview = /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(navigator.userAgent);
       if(uiwebview) {
-        alert("uiwebview")
         var $video = $('video');
         $video.attr('controls', true);
         $video.css({opacity: 0});
 
-        var img = new Image();
-        img.src = $video.attr('poster');
-        $(img).css({width: '100%'})
-        var playButton = $('<p>▶</p>').css({
-          'font-size': '200px',
-          'color': '#00AC7F',
-          'position': 'absolute',
-          'top': '0',
-          'width': '100%',
-          'text-align': 'center',
-          'line-height': '600px'
+        var poster = new Image();
+        poster.src = $video.attr('poster');
+        $(poster).css({width: '100%'})
+        var playButton = new Image();
+        playButton.src = '/play-button.png';
+        $(playButton).css({
+          position: 'absolute',
+          top: 'calc(50% - 85px)',
+          left: 'calc(50% - 75px)'
         })
-        $video.before(img).before(playButton)
+        $video.before(poster).before(playButton);
 
 
         player.on('playing', function(){
           $video.attr('controls', false);
           $video.css({opacity: 1});
-          img.remove();
         });
       }
     });
