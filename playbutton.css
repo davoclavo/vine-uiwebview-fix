@@ -1,0 +1,42 @@
+.play-button {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.play-button div:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 33.33%;
+    left: 33.33%;
+    border-style: solid;
+}
+
+.play-button:hover .top:after, .play-button.touched .top:after {
+    border-color: transparent transparent transparent #b5f4e3;
+}
+
+.top:after {
+    margin: 0 auto;
+    border-width: 97px 0 97px 173px;
+    border-color: transparent transparent transparent #79ffdc;
+}
+
+.play-button:hover .main:after, .play-button.touched .main:after {
+    border-color: transparent transparent transparent #1DC094;
+}
+
+.main:after {
+    margin: 2px 1px auto 0;
+    border-width: 94px 0 94px 168px;
+    border-color: transparent transparent transparent #00AC7F;
+}
+
+.border:after {
+    margin: 2px auto 0;
+    border-width: 96px 0 96px 172px;
+    border-color: transparent transparent transparent #007F5B;
+}
